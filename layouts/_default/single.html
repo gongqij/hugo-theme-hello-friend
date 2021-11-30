@@ -3,8 +3,8 @@
   {{ $contentTypeName := cond $isntDefault (string $.Site.Params.contentTypeName) "posts" }}
 
   <div class="post">
-    <h1 class="post-title">{{ .Title | markdownify }}</h1>
-    <div class="post-meta">
+    <h1 class="post-title" style="text-align:center">{{ .Title | markdownify }}</h1>
+    <div class="post-meta" style="text-align:center;color: #999999">
       {{ if .Date | default nil }}
         <span class="post-date">
           {{ .Date.Format ($.Site.Params.DateFormatSingle | default "2006-01-02") }}
@@ -17,15 +17,9 @@
         {{ end }}
       {{ end }}
 
-      {{ with .Params.Author }}
-        <span class="post-author"
-          >— {{ $.Site.Params.WrittenBy | default "Written by" }} {{ . }}</span
-        >{{ end }}
-
-
       {{ if $.Site.Params.ShowReadingTime }}
         <span class="post-read-time"
-          >— {{ .ReadingTime }} {{ $.Site.Params.MinuteReadingTime | default "min read" }}</span
+          >· {{ .ReadingTime }} {{ $.Site.Params.MinuteReadingTime | default "min read" }}</span
         >
       {{ end }}
     </div>

@@ -70,5 +70,9 @@
     </div>
     {{ end }}
     {{ partial "pagination.html" . }}
+
+    {{ if not (eq .Params.Comments "false") }}
+    {{ partial "comments.html" . }}
+    {{ end }}
   </div>
 {{ end }}

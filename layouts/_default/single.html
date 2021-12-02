@@ -43,7 +43,7 @@
         <aside class="table-of-contents">{{ .TableOfContents }}</aside>
         {{ end }}
       {{ end }}
-      {{ .Content | replaceRE "(<h[2-6] id=\"(.+)\".*>)(.*)(</h[2-6]>)" "${1}<a href=\"#${2}\" class=\"h-anchor\">></a>${3}${4}" | safeHTML }}
+      {{ .Content | replaceRE "(<h[2-6] id=\"(.+)\".*>)(.*)(</h[2-6]>)" "${1}<a href=\"#${2}\" class=\"h-anchor\">🔗</a>${3}${4}" | safeHTML }}
     </div>
     {{ if eq .Type $.Site.Params.contentTypeName }}
       {{ if or .NextInSection .PrevInSection }}
